@@ -118,7 +118,8 @@ public class Ques {
             }
             System.out.println();
         }*/
-       int k=0;
+       
+       /*int k=0;
        for(int i=0;i<n;i++){
         for(int j=0;j<n-1-i;j++){
             System.out.print(' ');
@@ -139,6 +140,6 @@ public class Ques {
         }
         
         System.out.println();
-       }
+       }*/
     }
 }
