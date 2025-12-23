@@ -75,15 +75,52 @@ public class Ques{
         return pair;
     }*/
 
-    //PRINT SUBARRAY
-    public static void subArray(int arr[]){
+    //PRINT SUBARRAY TYPE-2
+    /*public static int maxSubarr(int arr[]){
+        int currSum = 0;
+        int largeNum = Integer.MIN_VALUE;
+        int prefix[] = new int[arr.length];
+
+        prefix[0] = arr[0];
+        for(int i=1; i<prefix.length;i++){
+            prefix[i] = prefix[i-1] + arr[i];
+        }
+        
+        for(int i=0;i<arr.length;i++){
+            for(int j=i;j<arr.length;j++){
+                currSum = i==0 ? prefix[j] : prefix[j] - prefix[i-1];
+                System.out.println(currSum);
+                if(largeNum < currSum){
+                    largeNum = currSum;
+                }
+            }
+        }
+        return largeNum;
+    }*/
+
+   //PRINT SUBARRAY TYPE-3 (KADANE'S ALGO.)
+   public static int maxSubarr(int arr[]){
+        int currSum = 0, maxSum = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            currSum += arr[i];
+            if(currSum < 0){
+                currSum = 0;
+            }
+            maxSum = Math.max(currSum, maxSum);
+        }
+        return maxSum;
+   }
+
+
+    /*public static void subArray(int arr[]){
         int sum =0; int add=0;
         int largest = Integer.MIN_VALUE;
         int smallest = Integer.MAX_VALUE; 
 
         for(int i=0;i<arr.length;i++){
-            add = 0;
+            
             for(int j=i;j<arr.length;j++){
+                add = 0;
                 for(int k =i; k<=j; k++){
                     System.out.print(arr[k] + " ");
                     add += arr[k];
@@ -97,7 +134,7 @@ public class Ques{
                 } 
 
                 System.out.println();
-                System.out.print("Total sum of digits of subarrays:" + i + "is : " + add);
+                System.out.print("Total sum of digits of subarrays:" + "is : " + add);
                 sum++;
                 System.out.println();
             }
@@ -107,10 +144,10 @@ public class Ques{
         // System.out.print("Total sum of digits of subarrays:" + add);
         System.out.println("Highest subarrays sum is :" + largest);
         System.out.print("Smallest subarrays sum is :" + smallest);
-    }
+    }*/
 
     public static void main(String args[]){
-        int arr[] = {5,2,5};
+        int arr[] = {-2,-3,4,-1,-2,1,5,-3};
         /*System.out.println(arr[5]);
         arr[5] = 10;
         System.out.println(arr[5]);*/
@@ -136,6 +173,7 @@ public class Ques{
         
         //System.out.print(pairArr(arr));
 
-        subArray(arr);
+        // subArray(arr);
+        System.out.print(maxSubarr(arr));
     }
 }
