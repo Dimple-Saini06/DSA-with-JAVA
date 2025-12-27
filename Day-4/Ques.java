@@ -32,7 +32,7 @@ public class Ques{
 
 
     //BINARY SEARCH
-    /*public static int binSearch(int arr[], int val){
+    public static int binSearch(int arr[], int val){
         int start = 0, end = arr.length-1;
         while(end >= start){
             int mid = (start+end)/2;
@@ -47,7 +47,7 @@ public class Ques{
             }
         }
         return -1;
-    }*/
+    }
 
 
     //REVERSE AN ARRAY
@@ -147,7 +147,8 @@ public class Ques{
     }*/
 
     public static void main(String args[]){
-        int arr[] = {-2,-3,4,-1,-2,1,5,-3};
+        int arr[] = {1,3,5,6,8,9};
+        // int arr[] = {-2,-3,4,-1,-2,1,5,-3};
         /*System.out.println(arr[5]);
         arr[5] = 10;
         System.out.println(arr[5]);*/
@@ -160,7 +161,7 @@ public class Ques{
         // System.out.print(linearSearch(arr, 9));
         // System.out.print(largestNum(arr));
 
-        // System.out.print(binSearch(arr,1));
+        System.out.print(binSearch(arr,9));
         
         /*for(int i=0;i<arr.length;i++){
             System.out.print(arr[i] + " ");
@@ -174,6 +175,6 @@ public class Ques{
         //System.out.print(pairArr(arr));
 
         // subArray(arr);
-        System.out.print(maxSubarr(arr));
+        // System.out.print(maxSubarr(arr));
     }
 }
