@@ -66,10 +66,10 @@ public class Ques{
         /*System.out.println("AND : " + (5&6));
         System.out.println("OR : " + (5|6));
         System.out.println("XOR : " + (5^6));
-        System.out.println("1'S COMPLEMENT : " + (~13));
+        
         System.out.println("LEFT SHIFT : " + (5<<5));;
         System.out.println("RIGHT SHIFT : " + (6>>1));*/
-
+        // System.out.println("1'S COMPLEMENT : " + (~5));
         /*Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         if((n&1) == 1){
@@ -93,6 +93,27 @@ public class Ques{
         // System.out.println(fastExpo(5, 3));
 
         // int x=-4;System.out.println(x+" + "+1+" is "+ -~x);
-        System.out.println((int)('A'));
+        // System.out.println((int)('A'));
+
+        int binNum = 0,pow=0, num=1;
+        while(num>0){
+            int rem = num%2;
+            binNum = binNum +rem *((int)Math.pow(10,pow));
+            num /=2;
+            pow++;
+        }
+        
+        int result = 0;
+        while(binNum > 0){
+            int a = binNum%10;
+            if(a == 1){
+                result = result +a;
+            }else{
+                result=result +a;
+            }
+            binNum /= 10;
+        }
+
+        System.out.print(result);
     }
 }
