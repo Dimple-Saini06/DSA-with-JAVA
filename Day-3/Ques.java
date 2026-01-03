@@ -42,7 +42,7 @@ public class Ques{
 
 
    //Binary To Decimal
-    /*public static int binTodec(int num){
+    public static int binTodec(int num){
         int pow=0, dec=0;
         while(num>0){
             int ld = num%10;
@@ -52,10 +52,10 @@ public class Ques{
         }
 
         return dec;
-    }*/
+    }
 
     //Decimal To Binary
-    /*public static int decTobin(int num){
+    public static int decTobin(int num){
         int pow=0, bin=0;
         while(num>0){
             int ld = num%2;
@@ -64,7 +64,7 @@ public class Ques{
             num /= 2;
         }
         return bin;
-    }*/
+    }
 
     /*public static boolean evenOrodd(int n){
        if(n%2 == 0){
@@ -177,11 +177,11 @@ public class Ques{
         System.out.println(overloading('a','b'));*/
 
         // System.out.print(isPrime(613));
-        // System.out.println(binTodec(1101));
-        // System.out.print(decTobin(13));
+        System.out.println(binTodec(1100001));
+        System.out.print(decTobin(65));
         // output(72);
 
-        System.out.print(getInput());
+        // System.out.print(getInput());
     }
 }
 
