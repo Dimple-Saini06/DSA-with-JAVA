@@ -1,3 +1,4 @@
+import java.util.*;
 public class Ques{
     //QUES:1
     /*public static int diagonalSum(int matrix[][]){
@@ -42,7 +43,7 @@ public class Ques{
     }*/
 
     //QUES:4
-    public static boolean isPalidrome(String s){
+    /*public static boolean isPalidrome(String s){
         int n = s.length();
         for(int i=0;i<n/2;i++){
             if(s.charAt(i) != s.charAt(n-1-i)){
@@ -50,6 +51,25 @@ public class Ques{
             }
         }
         return true;
+    }*/
+
+    //QUES:5
+    public static boolean anagram(String s1, String s2){
+        int count1[] = new int[26];
+        int count2[] = new int[26];
+        for(int i=0;i<s1.length();i++){
+            char ch = s1.charAt(i);
+            int idx = ch - 'a';
+            count1[idx]++;
+        }
+
+        for(int i=0;i<s2.length();i++){
+            char ch = s2.charAt(i);
+            int idx = ch-'a';
+            count2[idx]++;
+        }
+
+        return Arrays.equals(count1,count2);
     }
     public static void main(String args[]){
         //QUES:1
@@ -78,7 +98,11 @@ public class Ques{
         }*/
 
         //QUES:4
-        String s = "raar";
-        System.out.print(isPalidrome(s));
+        /*String s = "raar";
+        System.out.print(isPalidrome(s));*/
+
+        //QUES:5
+        System.out.print(anagram("dimp", "pldeim"));
+
     }
 }
