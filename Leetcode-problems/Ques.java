@@ -22,7 +22,7 @@ public class Ques{
             System.out.println();
         }*/
 
-        int nums[] = {1,1,2};
+        /*int nums[] = {1,1,2};
         int c = 0;
         for(int i=0;i<nums.length;i++){
             if(i+1 < nums.length && nums[i] != nums[i+1]){
@@ -44,6 +44,25 @@ public class Ques{
         System.out.println(c);
         for(int i=0;i<count.length;i++){
             System.out.print(count[i]);
+        }*/
+
+       int num[] ={1,2,0,0};   int k =34;
+    //    List<Integer> digitList = new ArrayList<>();
+        int count = 0, pow = 0;
+        for(int i=0;i<num.length;i++){
+            count = count * num[i] + (int)Math.pow(10, pow);
+            System.out.println(count);
+            pow++;
         }
+        count += k;
+        System.out.println(count);
+        // while(count > 0){
+        //     digitList.add(0, count % 10);
+        //     count = count / 10;
+        // }
+
+        // for(int i=0;i<digitList.length;i++){
+        //     System.out.print(digitList[i]);
+        // }
     }
 }
