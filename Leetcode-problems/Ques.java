@@ -50,6 +50,9 @@ public class Ques{
     //    List<Integer> digitList = new ArrayList<>();
         int count = 0, pow = 0;
         for(int i=0;i<num.length;i++){
+            if(num[i] == 0){
+                count
+            }
             count = count * num[i] + (int)Math.pow(10, pow);
             System.out.println(count);
             pow++;
