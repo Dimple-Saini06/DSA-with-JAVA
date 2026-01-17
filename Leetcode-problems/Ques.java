@@ -49,7 +49,7 @@ public class Ques{
        int num[] ={1,2,0,0};   int k =34;
     //    List<Integer> digitList = new ArrayList<>();
         int count = 0, pow = 0;
-        for(int i=0;i<num.length;i++){
+        for(int i=0;i<num.length;i++){2
             if(num[i] == 0){
                 count
             }
