@@ -13,7 +13,7 @@ public class Backtracking {
         }
     }*/
 
-    /*public static void findSubset(String str, String ans, int i){
+    public static void findSubset(String str, String ans, int i){
         if(i == str.length()){
             if(ans.length() == 0){
                 System.out.println("null");
@@ -25,9 +25,9 @@ public class Backtracking {
 
         findSubset(str, ans+str.charAt(i), i+1);
         findSubset(str, ans, i+1);
-    }*/
+    }
 
-    public static void findPermutation(String str, String ans){
+    /*public static void findPermutation(String str, String ans,int level){
         if(str.length() == 0){
             System.out.println(ans);
             return;
@@ -36,18 +36,19 @@ public class Backtracking {
         for(int i=0; i<str.length();i++){
             char curr = str.charAt(i);
             String newStr = str.substring(0,i) + str.substring(i+1);
-            System.out.println("newS: " + newStr);
-            findPermutation(newStr, ans+curr);
+            // System.out.println("Level " + level + " | Choice i=" + i + " | Picked: " + curr);
+            findPermutation(newStr, ans+curr, level+1);
+            // System.out.println("Level " + level + " | Backtracked from " + curr + " | Moving to next i...");
         }
         
-    }
+    }*/
     public static void main(String args[]){
         // QUE:1
         /*int arr[] = new int[5];
         recBack(arr, 0, 1);
         print(arr);*/
 
-        // findSubset("abcd", "", 0);
-        findPermutation("abc", "");
+        findSubset("abcd", "", 0);
+        // findPermutation("abcd", "",1);
     }
 }
