@@ -50,7 +50,7 @@ public class Backtracking {
         }
     }*/
 
-    public static int gridWay(int i, int j, int n, int m){
+   /* public static int gridWay(int i, int j, int n, int m){
         if(i == n-1 && j == m-1){
             return 1;
         }else if(i == n || j == m){
@@ -61,7 +61,25 @@ public class Backtracking {
         int w2 = gridWay(i, j+1, n, m);
 
         return w1+w2;
+    }*/
+
+    public static long factorial(int n){
+        long res = 1;
+        for(int i = 1; i<=n;i++){
+            res *= i;
+        }
+
+        return res;
     }
+    public static long optimizedGridWay(int n,int m){
+        int N = n-1;
+        int M = m-1; 
+        long numerator = factorial(N+M);
+        long denominator = factorial(N) * factorial(M);
+
+        return numerator/denominator;
+    }
+
     public static void main(String args[]){
         /*int n = 2;
         char board[][] = new char[n][n];
@@ -79,7 +97,8 @@ public class Backtracking {
         }
         System.out.print("total ways is = " + count);*/
 
-        int n = 2, m = 3;
-        System.out.print(gridWay(0,0,n,m));
+        int n = 4, m = 2;
+        // System.out.print(gridWay(0,0,n,m));
+        System.out.print(optimizedGridWay(n,m));
     }
 }
