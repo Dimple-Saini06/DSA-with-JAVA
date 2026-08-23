@@ -72,7 +72,7 @@ public class Classroom {
         return false;
     }*/
 
-    public static ArrayList<Integer> lonelyNum(ArrayList<Integer> arr){
+    /*public static ArrayList<Integer> lonelyNum(ArrayList<Integer> arr){
         Collections.sort(arr);
         ArrayList<Integer> num = new ArrayList<>();
 
@@ -97,6 +97,59 @@ public class Classroom {
         
 
         return num;
+    }*/
+
+
+
+   /*static int freqNum(ArrayList<Integer> arr, int key){
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        int maxNum = 0;
+        int ans = 0;
+
+        for(int i=0;i<arr.size()-1;i++){
+            if(arr.get(i) == key){
+                int next = arr.get(i+1);
+                map.put(next, map.getOrDefault(next, 0)+1);
+            }
+        }
+
+        for(Map.Entry<Integer, Integer> entry : map.entrySet()){
+            if(maxNum < entry.getValue()){
+                maxNum = entry.getValue();
+                ans = entry.getKey();
+            }
+        }
+        return ans;
+    }*/
+
+    static ArrayList<Integer> beautifylArr(int n){
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(1);
+
+        while(arr.size() < n){
+             ArrayList<Integer> temp = new ArrayList<>();
+
+            //odd
+            for(int el : arr){
+                int val = 2*el-1;
+                if(val <= n){
+                    temp.add(val);
+                } 
+            }
+
+            //even
+            for(int el : arr){
+                int val = 2*el;
+                if(val <= n){
+                    temp.add(val);
+                } 
+            }
+
+            arr = temp;
+        }
+
+        return arr;
     }
     public static void main(String args[]){
         // ArrayList<Integer> list = new ArrayList<>();
@@ -143,8 +196,19 @@ public class Classroom {
         // ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(11,15,6,7,8,9));
         // System.out.print(pairSum(arr,99));
 
-        ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(10,6,5,8));
-        System.out.print(lonelyNum(arr));
+        // ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(10,6,5,8));
+        // System.out.print(lonelyNum(arr));
         
+        // ArrayList<Integer> arr = new ArrayList<>(Arrays.asList(2,2,2,2,3,2,7,2,7,2,7,2,7,2,7));
+        // int key = 2;
+        // System.out.print(freqNum(arr, key));
+
+        int n=5;
+        ArrayList<Integer> arr = beautifylArr(n);
+
+        System.out.println("Method returned!");
+        for(int key : arr){
+            System.out.print(key);
+        }
     }
 }
